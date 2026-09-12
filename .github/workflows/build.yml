@@ -83,10 +83,11 @@ on:
 name: 内核编译
 
 env:
-  MANAGER_SUFFIX:Y
+  MANAGER_SUFFIX: @YG
 
 on:
   workflow_dispatch:
+
 
 jobs:
   build-kernel:
