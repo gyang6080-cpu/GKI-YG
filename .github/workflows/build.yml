@@ -80,13 +80,7 @@ on:
         required: false
         type: boolean
         default: false
-name: 内核编译
 
-env:
-  MANAGER_SUFFIX: YG
-
-on:
-  workflow_dispatch:
 
 
 
