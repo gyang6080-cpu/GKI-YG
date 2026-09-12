@@ -506,6 +506,11 @@ jobs:
           else
             echo "KSU_LATEST_COMMIT_DATE=未知" >> $GITHUB_ENV
           fi
+      - name: 修改内核署名 @YG
+        run: |
+          ls -la ./KernelSU/kernel/
+          sed -i 's/@SukiSU/@YG/g' ./KernelSU/kernel/version.c
+          cat ./KernelSU/kernel/version.c
 
       - name: 修复 SukiSU 内核卸载功能缺失的 setter
         if: inputs.ksu_variant == 'SukiSU' || inputs.ksu_variant == 'SukiSU(40726)' || inputs.ksu_variant == 'SukiSU(40548)'
