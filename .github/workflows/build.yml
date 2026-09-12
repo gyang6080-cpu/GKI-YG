@@ -508,9 +508,12 @@ jobs:
           fi
       - name: 修改内核署名 @YG
         run: |
-          ls -la ./KernelSU/kernel/
-          sed -i 's/@SukiSU/@YG/g' ./KernelSU/kernel/version.c
-          cat ./KernelSU/kernel/version.c
+          REAL_KSU=$(realpath ./KernelSU)
+          echo "真实源码路径: $REAL_KSU"
+          ls -la "$REAL_KSU"/kernel/
+          sed -i 's/@SukiSU/@YG/g' "$REAL_KSU"/kernel/version.c
+          cat "$REAL_KSU"/kernel/version.c
+      
 
       - name: 修复 SukiSU 内核卸载功能缺失的 setter
         if: inputs.ksu_variant == 'SukiSU' || inputs.ksu_variant == 'SukiSU(40726)' || inputs.ksu_variant == 'SukiSU(40548)'
