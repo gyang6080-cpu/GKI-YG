@@ -83,7 +83,7 @@ on:
 name: 内核编译
 
 env:
-  MANAGER_SUFFIX: "@YG"
+  MANAGER_SUFFIX:Y
 
 on:
   workflow_dispatch:
